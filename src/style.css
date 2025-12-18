@@ -11,6 +11,11 @@ header {
   padding-bottom: 30px;
 }
 
+h1 {
+  color: #13567b;
+  font-weight: 800;
+  margin: 0 0 30px 0;
+}
 main {
   padding: 30px 0;
 }
@@ -19,7 +24,6 @@ footer {
   border-top: 1px solid #f9f7fe;
   text-align: center;
   padding-top: 15px;
-
   color: rgba(39, 33, 66, 0.4);
 }
 
@@ -79,8 +83,10 @@ a {
 }
 
 .current-temperature {
+  color: #0d3144;
   display: flex;
   font-size: 48px;
+  font-weight: bold;
 }
 .current-temperature-icon {
   width: 80px;
