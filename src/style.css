@@ -52,7 +52,7 @@ a {
   background-color: #5facb0;
   color: white;
   border: none;
-  padding: 20px;
+  padding: 20px 45px;
   line-height: 1;
   border-radius: 5px;
 }
@@ -83,9 +83,9 @@ a {
   font-size: 48px;
 }
 .current-temperature-icon {
-  font-size: 40px;
-  margin-top: 20px;
-  margin-right: 10px;
+  width: 80px;
+  height: 80px;
+  margin-right: 12px;
 }
 
 .current-temperature-value {
