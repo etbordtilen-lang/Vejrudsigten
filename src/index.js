@@ -1,5 +1,5 @@
 function displayTemperature(response) {
-  console.log(response.data);
+  //console.log(response.data);
 
   let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.temperature.current);
@@ -71,23 +71,33 @@ function getForecast(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+
   let forecastHTML = "";
-  days.forEach(function (day) {
+
+  response.data.daily.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
     <div class="weather-forecast-day">
-    <div class="weather-forecast-date">${day}</div>
-    <div class="weather-forecast-icon">☀️</div>
+    <div class="weather-forecast-date">Tue</div>
+    <div class="weather-forecast-icon"><img src="${
+      day.condition.icon_url
+    }" /></div>
     <div class="weather-forecast-temperatures">
-    <div class="weather-forecast-temp"><strong>3°</strong></div>
-    <div class="weather-forecast-temp">-3°</div>
+    <div class="weather-forecast-temp"><strong>${Math.round(
+      day.temperature.maximum
+    )}°</strong></div>
+    <div class="weather-forecast-temp">${Math.round(
+      day.temperature.minimum
+    )}°</div>
     </div>
     </div>
     `;
   });
+
   let forecastElement = document.querySelector("#five-day-forecast");
   forecastElement.innerHTML = forecastHTML;
 }
